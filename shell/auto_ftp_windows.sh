@@ -1,0 +1,17 @@
+#!/bin/bash
+
+IP=192.168.10.1
+UNAME=user01
+UPASS=user01
+
+ftp -n "$IP" << EOF
+user $UNAME $UPASS
+cd test
+lcd /root
+bin
+hash
+prompt
+mput /test/testfile.txt
+quit
+EOF
+
